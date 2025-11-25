@@ -95,14 +95,4 @@ Analytics dashboard
 
 🤝 Contributing
 
-Feel free to fork this repo and improve it.
-Pull requests are welcome.
 
-📜 License
-
-MIT License – Free to use and modify.
-
-✨ Author
-
-Charitha (Chaita)
-Beginner developer exploring Web, AI, and CN projects.
