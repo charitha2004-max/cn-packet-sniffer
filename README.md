@@ -1,98 +1,102 @@
-PacketTrack – Network Packet Monitoring Dashboard
+PacketTrack – Real-Time Network Packet Monitoring Simulator
 
-PacketTrack is a lightweight, web-based network packet simulation and monitoring dashboard built using HTML, CSS, and JavaScript.
-It visually demonstrates how packets move in a network through live simulation, glowing animations, alerts, and real-time updates.
+PacketTrack is a lightweight, browser-based network packet simulation dashboard built using HTML, CSS, and JavaScript.
+It demonstrates how packets move through a network using real-time updates, color-coded statuses, and animated alerts — perfect for Computer Networks mini-projects.
 
-This project is ideal for Computer Networks mini-projects, academic submissions, and GitHub portfolio showcases.
+This project simulates packet generation, movement, and suspicious packet detection inside a clean, neon-themed dashboard UI.
 
-🚀 Features
-✔ Live Packet Simulation
+✨ Features
+🔹 Real-Time Packet Simulation
 
-Packets are generated dynamically every second with unique ID, IP addresses, type, and status.
+Generates packets every second with dynamic values (ID, type, source, destination, payload).
 
-✔ Neon Glow Animation
+🔹 Neon Glow Animations
 
-Every new packet glows briefly to resemble real network monitoring tools.
+New packets gently glow on arrival, giving a live-network feel.
 
-✔ Suspicious Packet Alerts
+🔹 Suspicious Packet Alerts
 
-Packets marked as Suspicious are highlighted with glowing red/purple warning effects.
+Suspicious packets (e.g., odd payloads, unusual types) are highlighted with red/pink glowing effects.
 
-✔ Color-Coded Status
+🔹 Color-Coded Status Indicators
 
-🟢 Received
+Sent (Blue)
 
-🔵 Sent
+In Transit (Yellow)
 
-🟡 In Transit
+Received (Green)
 
-🔴 Error
+Error (Red)
 
-🟣 Suspicious
+Suspicious (Purple/Pink)
 
-✔ Search / Filter Bar
+🔹 Interactive Packet Details
 
-Filter packets by ID, source, destination, type, or status.
+Click any packet row to view its full information in a pop-up modal.
 
-✔ Interactive Popup
+🔹 Simple Search & Filter
 
-Clicking a packet opens a modal showing complete details.
+Filter packets by ID, type, status, or IP address.
 
-✔ Modern Cyber Dashboard UI
+🛠️ Technology Stack
+Component	Technology	Purpose
+Frontend	HTML5, CSS3, JavaScript	UI, animations, simulation logic
+UI Theme	CSS Neon Effects	Modern, cyber-style visual appearance
+Data Handling	JavaScript Arrays	Stores and updates packet list
 
-Dark theme + neon blue highlights for a clean and professional look.
+No backend required. No installations. Just open and run.
 
-🛠 Tech Stack
+🚀 Getting Started
+✔ 1. Clone or Download the Project
+git clone <your-repo-link>
+cd packettrack
 
-HTML5 – Structure
+✔ 2. Run the Project
 
-CSS3 – UI, animations, theme
-
-JavaScript – Logic, simulation, interactivity
-
-📂 Project Structure
-PacketTrack/
-│
-├── index.html     # Main dashboard page
-├── style.css      # Styling & animations
-└── script.js      # Packet simulation logic
-
-
-(If you used a single HTML file, that's totally fine.)
-
-⚙️ How to Run
-
-Just open the project folder and double-click:
+Simply open the file:
 
 index.html
 
 
-Runs directly in the browser — No installations needed.
+The dashboard will start working immediately in your browser.
 
-🎯 Use Cases
-
-CN mini-project
-
-Network packet visualization
-
-Simulation of monitoring tools
-
-Beginner-friendly networking demonstration
-
-Portfolio project
-
-🚧 Future Enhancements
-
-Real network sniffing using Python/Node.js
-
-Export logs to CSV
-
-Notification system
-
-Theme toggle (dark/light)
-
-Analytics dashboard
-
-🤝 Contributing
+📁 Project Structure
+packettrack/
+│
+├── index.html      # Main interface
+├── style.css       # Neon theme + animations
+└── script.js       # Packet simulation logic
 
 
+(If your build is in one file, that is perfectly fine.)
+
+🔑 Key Logic Highlights
+✔ Packet Generator
+
+Simulates live packet creation with random data:
+
+const packet = {
+  id: "PKT-" + Math.floor(Math.random() * 9000 + 1000),
+  type: randomType(),
+  source: randomIP(),
+  destination: randomIP(),
+  status: getRandomStatus()
+};
+
+✔ Suspicious Packet Detection
+
+Triggers glowing alert for unusual packet behavior.
+
+✔ Live Dashboard Updates
+
+Table refreshes every second with new packets and status changes.
+
+🔮 Future Enhancements
+
+Export packet logs as CSV
+
+Add a real packet analyzer using Python/Node.js
+
+Animated network topology diagram
+
+WebSocket support for true real-time data
