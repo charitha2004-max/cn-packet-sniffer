@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Packet Tracker Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Packet Tracker Dashboard</h1>
+
+<!-- Alert Box for Suspicious Activity -->
+<div id="alertBox" class="alert-box">No Alerts</div>
+
+<!-- Dashboard Stats Cards -->
+<div class="dashboard">
+    <div class="card">
+        <h2 id="total">0</h2><p>Total Packets</p>
+    </div>
+    <div class="card">
+        <h2 id="sent">0</h2><p>Sent</p>
+    </div>
+    <div class="card">
+        <h2 id="transit">0</h2><p>In Transit</p>
+    </div>
+    <div class="card">
+        <h2 id="received">0</h2><p>Received</p>
+    </div>
+    <div class="card">
+        <h2 id="error">0</h2><p>Error</p>
+    </div>
+    <div class="card">
+        <h2 id="suspicious">0</h2><p>Suspicious</p>
+    </div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+    <button id="startBtn">Start Transmission</button>
+    <button id="stopBtn" class="stop">Stop Transmission</button>
+    <label for="filterStatus">Filter by Status:</label>
+    <select id="filterStatus">
+        <option value="All">All</option>
+        <option value="Sent">Sent</option>
+        <option value="In Transit">In Transit</option>
+        <option value="Received">Received</option>
+        <option value="Error">Error</option>
+        <option value="Suspicious">Suspicious</option>
+    </select>
+    <label for="searchPacket">Search ID:</label>
+    <input type="number" id="searchPacket" placeholder="Packet ID">
+</div>
+
+<!-- Packet Table -->
+<div class="table-container">
+    <table id="packetTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Type</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<!-- Modal for Packet Details -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h3>Packet Details</h3>
+        <p id="modalContent"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

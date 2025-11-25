@@ -1,0 +1,177 @@
+/* ----- Dark Background & Typography ----- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0f111a;
+    color: #c0c0c0;
+}
+h1 {
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    background-color: #001f3f;
+    color: #00ffff;
+    font-size: 28px;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+/* ----- Alert Box ----- */
+.alert-box {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    color: #0f111a;
+    background-color: #0f111a;
+    border: 2px solid #ff1744;
+    border-radius: 8px;
+    margin: 10px 20px;
+    display: none;
+    text-shadow: 0 0 5px #ff1744, 0 0 10px #ff1744, 0 0 15px #ff1744;
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    0%,50%,100% { opacity: 1; }
+    25%,75% { opacity: 0.3; }
+}
+
+/* ----- Dashboard Cards ----- */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.card {
+    background-color: #111228;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff inset;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: default;
+}
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff inset;
+}
+.card h2 { margin: 0; font-size: 24px; color: #00ffff; text-shadow: 0 0 5px #00ffff; }
+.card p { margin: 5px 0 0; font-size: 16px; color: #c0c0c0; }
+
+/* ----- Controls ----- */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+button {
+    padding: 10px 20px;
+    border: 2px solid #00ffff;
+    background-color: transparent;
+    color: #00ffff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-shadow: 0 0 5px #00ffff;
+}
+button:hover { 
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff inset; 
+    transform: translateY(-2px);
+}
+button.stop { border-color: #ff1744; color: #ff1744; text-shadow: 0 0 5px #ff1744; }
+button.stop:hover { box-shadow: 0 0 10px #ff1744, 0 0 20px #ff1744 inset; }
+
+/* ----- Inputs ----- */
+input, select {
+    padding: 7px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #00ffff;
+    background-color: #111228;
+    color: #c0c0c0;
+    transition: all 0.3s;
+}
+input:focus, select:focus { 
+    border-color: #00ffff; 
+    box-shadow: 0 0 10px #00ffff; 
+    outline: none; 
+}
+
+/* ----- Table ----- */
+.table-container { padding:20px; overflow-x:auto; }
+table {
+    width:100%;
+    border-collapse: collapse;
+    background-color:#111228;
+    border-radius:12px;
+    box-shadow:0 0 10px #00ffff;
+}
+th, td {
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #0f111a;
+    transition: background-color 0.3s;
+}
+th {
+    background-color:#001f3f;
+    color:#00ffff;
+    text-shadow:0 0 5px #00ffff;
+}
+tr:hover { background-color: #001733; cursor:pointer; }
+
+/* ----- Neon Status Badges ----- */
+.status-Sent { color:#2196F3; font-weight:bold; animation: pulse 1.5s infinite; }
+.status-In\ Transit { color:orange; font-weight:bold; animation: pulse 1.5s infinite; }
+.status-Received { color:#00ff00; font-weight:bold; animation: pulse 1.5s infinite; }
+.status-Error { color:#ff1744; font-weight:bold; animation: pulse 1.5s infinite; }
+.status-Suspicious { color:#ff1744; font-weight:bold; animation: pulse 1.5s infinite; }
+
+@keyframes pulse {
+    0% { text-shadow:0 0 5px; }
+    50% { text-shadow:0 0 15px; }
+    100% { text-shadow:0 0 5px; }
+}
+
+/* ----- Glow Animation for New Packets ----- */
+.new-packet {
+    animation: glowFade 1.5s ease-out;
+}
+@keyframes glowFade {
+    0% { background-color: #001733; box-shadow: 0 0 15px #00ffff; }
+    50% { background-color: #001f44; box-shadow: 0 0 20px #00ffff; }
+    100% { background-color: #111228; box-shadow: none; }
+}
+
+/* ----- Modal ----- */
+.modal {
+    display:none;
+    position:fixed;
+    z-index:1000;
+    left:0; top:0;
+    width:100%; height:100%;
+    background-color: rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+}
+.modal-content {
+    background-color:#111228;
+    padding:20px;
+    border-radius:12px;
+    width:320px;
+    text-align:center;
+    box-shadow:0 0 20px #00ffff;
+    color:#c0c0c0;
+}
+.close {
+    position:absolute;
+    top:5px;
+    right:10px;
+    font-size:22px;
+    cursor:pointer;
+    color:#00ffff;
+    text-shadow:0 0 5px #00ffff;
+}
